@@ -13,22 +13,14 @@
 
     <main>
 
-        <aside class="hidden absolute bg-[#1b1e29]/95 h-dvh w-90">
+        <aside id="aside-country" class="hidden absolute bg-[#1b1e29]/95 h-dvh w-full xl:w-100">
 
-            <div class="flex justify-center items-center bg-black/40 p-4">
-                <h1 class="text-white font-semibold text-2xl">Select Your Category</h1>
+            <div class="flex justify-between">
+                <input id="input-search-country" class="text-white p-3 w-full outline-none" type="text" placeholder="Search Country ...">
+                <button id="btn-close-aside" class="text-gray-400 hover:text-gray-600 cursor-pointer text-2xl font-bold leading-none pr-4">&times;</button>
             </div>
 
-            <ul class="max-h-lvh overflow-y-auto">
-
-                <li>
-                    <div class="flex items-center gap-4 bg-black/40 hover:bg-black/20 px-2 py-1 cursor-pointer">
-
-                        <img class="h-13" src="assets/images/test.png" alt="channel-logo">
-                        <p class="text-white font-semibold">MOROCCO</p>
-
-                    </div>
-                </li>
+            <ul id="list-country" class="max-h-dvh overflow-y-auto">
 
             </ul>
 
@@ -42,72 +34,23 @@
 
                     <div class="flex gap-2 items-center">
 
-                        <img class="w-13 p-2 bg-black/40 hover:bg-black/20 rounded-md cursor-pointer" src="assets/icons/list.svg" alt="list-icon">
-                       
+                        <img id="img-aside-country" class="w-13 p-2 bg-black/40 hover:bg-black/20 rounded-md cursor-pointer" src="assets/icons/list.svg" alt="list-icon">
                         <input class="bg-black/40 hover:bg-black/20 shadow-md transition duration-300 hover p-3 text-white w-full rounded-md" type="text" placeholder="Search Channel ...">
+                    
                     </div>
 
-                    <ul class="max-h-dvh xl:max-h-142 overflow-y-auto space-y-2">
+                    <ul id="list-channels" class="max-h-dvh xl:max-h-142 overflow-y-auto space-y-2">
 
-                        <li>
-                            <div class="flex items-center gap-4 bg-black/40 hover:bg-black/20 transition duration-300 px-2 py-1 rounded-md cursor-pointer">
-                                
-                                <img class="h-13" src="assets/images/test.png" alt="channel-logo">
-                               
-                                <p class="text-white font-semibold">1</p>
-                                
-                                <div>
-                                    <p class="text-white font-semibold">FR - RMC STORY HD</p>
-                                    <p class="text-white text-xs">No Program Found</p>
-                                </div>
-                            
-                            </div>
-                        </li>
                     </ul>
 
                 </div>
 
-                <div class="grid grid-cols-1 gap-3 xl:max-w-200">
+                <div class="flex flex-col gap-3 xl:max-w-200">
                     
                     <video class="rounded-md" src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"></video>    
-                
+
                     <ul class="max-h-40 overflow-y-auto space-y-3">
                         
-                        <li>
-                            <div class="shadow-xl">
-                                <h1 class="text-white text-2xl font-semibold">02:05 AM - 03:05AM 999: Critical Condition</h1>
-                                <p class="text-gray-400">Documentary series following the work of major hospital truma untit. Helen has a life-threatening anseurism anseurism anseurism anseurism anseurism anseurism anseurism anseurism </p>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <div class="shadow-xl">
-                                <h1 class="text-white text-2xl font-semibold">02:05 AM - 03:05AM 999: Critical Condition</h1>
-                                <p class="text-gray-400">Documentary series following the work of major hospital truma untit. Helen has a life-threatening anseurism anseurism anseurism anseurism anseurism anseurism anseurism anseurism </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="shadow-xl">
-                                <h1 class="text-white text-2xl font-semibold">02:05 AM - 03:05AM 999: Critical Condition</h1>
-                                <p class="text-gray-400">Documentary series following the work of major hospital truma untit. Helen has a life-threatening anseurism anseurism anseurism anseurism anseurism anseurism anseurism anseurism </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="shadow-xl">
-                                <h1 class="text-white text-2xl font-semibold">02:05 AM - 03:05AM 999: Critical Condition</h1>
-                                <p class="text-gray-400">Documentary series following the work of major hospital truma untit. Helen has a life-threatening anseurism anseurism anseurism anseurism anseurism anseurism anseurism anseurism </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="shadow-xl">
-                                <h1 class="text-white text-2xl font-semibold">02:05 AM - 03:05AM 999: Critical Condition</h1>
-                                <p class="text-gray-400">Documentary series following the work of major hospital truma untit. Helen has a life-threatening anseurism anseurism anseurism anseurism anseurism anseurism anseurism anseurism </p>
-                            </div>
-                        </li>
-
                         <li>
                             <div class="shadow-xl">
                                 <h1 class="text-white text-2xl font-semibold">02:05 AM - 03:05AM 999: Critical Condition</h1>
@@ -123,6 +66,8 @@
 
         </section>
     </main>
+    
+    <script type="module" src="./js/main.js"></script>
     
 </body>
 </html>
