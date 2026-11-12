@@ -31,13 +31,14 @@ export async function loadListCountry() {
 
             const list_channels = document.getElementById("list-channels");
             if (!list_channels) return false;
-                
-            list_channels.innerHTML = "";
 
-            const channels = await getChannesFromCountryAPI(listItem.id)
-            channels.forEach(data => {
-                list_channels.innerHTML += requestRenderChannels(data);
-            })
+            const channels = await getChannesFromCountryAPI()
+            if (!channels) return false;
+
+            const result = channels.filter(code => { return code.countryCode === listItem.id})
+
+            list_channels.innerHTML = "";
+            result.forEach(data => list_channels.innerHTML += requestRenderChannels(data))
 
         }
     })
