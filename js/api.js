@@ -1,8 +1,6 @@
-const COUNTRY_LIST = ["MA","TN","DZ","ES","FR","BE"]
+let CHANNELS = [];
 
 export async function getCountryFromAPI() {
-
-    const result = [];
 
     try {
 
@@ -12,13 +10,7 @@ export async function getCountryFromAPI() {
             throw new Error(`HTTP error! Status: ${response.status}`);
 
         const data = await response.json();
-        for (const object of data) {
-            for (const value of COUNTRY_LIST) {
-                if (value === object.code) 
-                    result.push(object);
-            }
-        }
-
+        const result = data.filter(country => { return country.code === "MA" || country.code === "TN" || country.code === "FR" || country.code === "ES" || country.code === "BE" || country.code === "QA" })
         return result;
 
     } catch (error) {
@@ -29,7 +21,9 @@ export async function getCountryFromAPI() {
 
 }
 
-export async function getChannesFromCountryAPI(CODE) {
+export async function getChannesFromCountryAPI() {
+
+    if (CHANNELS.length > 0) return CHANNELS;
 
     try {
 
@@ -38,12 +32,10 @@ export async function getChannesFromCountryAPI(CODE) {
         if (!response.ok)
             throw new Error(`HTTP error! Status: ${response.status}`);
 
-        const result = await response.json();
-        const data = result.filter(value => {
-            return value.countryCode === CODE
-        })
+        const data = await response.json();
+        CHANNELS = [...data];
 
-        return data;
+        return CHANNELS;
 
     } catch (error) {
         console.log(error)
