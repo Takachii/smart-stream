@@ -9,15 +9,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
-<body class="bg-gray-800">
+<body class="bg-[#0b0f19]">
 
     <main>
 
-        <aside id="aside-country" class="absolute bg-[#1b1e29]/95 h-dvh w-full xl:w-100 scrollbar-thumb-gray-500">
+        <aside id="aside-country" class="absolute bg-[#111827]/95 h-dvh w-full xl:w-100 scrollbar-thumb-gray-500">
 
-            <div class="flex justify-between">
-                <input id="input-search-country" class="text-white p-3 w-full outline-none" type="text" placeholder="Search Country ...">
-                <button id="btn-close-aside" class="text-gray-400 hover:text-gray-600 cursor-pointer text-2xl font-bold leading-none pr-4">&times;</button>
+            <div class="flex justify-between bg-[#1a2234]">
+                <input id="input-search-country" class="text-slate-100 placeholder-slate-500 p-3 w-full outline-none" type="text" placeholder="Search Country ...">
+                <button id="btn-close-aside" class="text-slate-400 hover:text-sky-400 cursor-pointer text-2xl font-bold leading-none pr-4">&times;</button>
             </div>
 
             <ul id="list-country" class="max-h-dvh overflow-y-auto">
@@ -34,17 +34,17 @@
 
                     <div class="flex gap-2 items-center">
 
-                        <img id="img-aside-country" class="w-13 p-2 bg-black/40 hover:bg-black/20 rounded-md cursor-pointer" src="assets/icons/list.svg" alt="list-icon">
-                        <input id="search-channels" class="bg-black/40 hover:bg-black/20 shadow-md transition duration-300 hover p-3 text-white w-full rounded-md" type="text" placeholder="Search Channel ...">
+                        <img id="img-aside-country" class="w-13 p-2 bg-[#161d2e] hover:bg-sky-600 rounded-md cursor-pointer" src="assets/icons/list.svg" alt="list-icon">
+                        <input id="search-channels" class="bg-[#161d2e] hover:bg-[#1e2940] focus:bg-[#1e2940] placeholder-slate-500 shadow-md shadow-black/40 transition duration-300 hover p-3 text-slate-100 w-full rounded-md" type="text" placeholder="Search Channel ...">
                     
                     </div>
 
                     <ul id="list-channels" class="max-h-dvh xl:max-h-142 overflow-y-auto space-y-2 scrollbar-thumb-gray-500">
 
                         <li>
-                            <div class="flex items-center gap-4 bg-black/40 hover:bg-black/20 transition duration-300 px-2 py-1 rounded-md cursor-pointer">
+                            <div class="flex items-center gap-4 bg-[#161d2e] hover:bg-sky-600/30 transition duration-300 px-2 py-1 rounded-md cursor-pointer">
                                 <img class="h-13" src="assets/images/test.png" alt="channel-logo">
-                                <p class="text-white font-semibold">NO CHANNEL SELECTED</p>
+                                <p class="text-slate-100 font-semibold">NO CHANNEL SELECTED</p>
                             </div>
                         </li>
 
@@ -54,14 +54,14 @@
 
                 <div class="flex flex-col gap-3 xl:max-w-200">
                     
-                    <video id="channel-preview" class="rounded-md" controls autoplay muted></video>
+                    <video id="channel-preview" class="rounded-md bg-black" controls autoplay muted></video>
 
                     <ul id="list-epg" class="max-h-40 overflow-y-auto space-y-3">
 
                         <li>
-                            <div class="shadow-xl">
-                                <h1 class="text-white text-2xl font-semibold">00:00 AM - 00:00AM 000: No Channel Selected</h1>
-                                <p class="text-gray-400">No Channel Selected to load EPG data ...</p>
+                            <div class="shadow-xl shadow-black/40">
+                                <h1 class="text-slate-100 text-2xl font-semibold">00:00 AM - 00:00AM 000: No Channel Selected</h1>
+                                <p class="text-slate-400">No Channel Selected to load EPG data ...</p>
                             </div>
                         </li>
 
