@@ -108,6 +108,13 @@ export function loadChannelEvents() {
 
             }
 
+            document.querySelectorAll("[data-active]").forEach(element => {
+                const listItem_ = element.closest("li");
+                if (listItem !== listItem_) {
+                    element.dataset.active = "false";
+                }
+            });
+
         }
 
     })
