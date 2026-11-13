@@ -1,10 +1,10 @@
-import { getCountryFromAPI, getChannesFromCountryAPI } from "./api.js"
-import { requestRenderChannels } from "./channels.js"
+import { getCountryFromAPI, getChannesFromCountryAPI } from "./api.js";
+import { requestRenderChannels, loadDefaultChannelSteram } from "./channels.js";
 
 function requestRenderListCountry(data) {
     return `
         <li id="${data.code}" data-country="${data.name}">
-            <div class="flex items-center gap-4 bg-black/40 hover:bg-black/20 px-2 py-1 cursor-pointer">
+            <div class="flex items-center gap-4 bg-black/40 hover:bg-black/20 transition-colors px-2 py-1 cursor-pointer">
                 <img class="h-13" src="https://flagsapi.com/${data.code}/flat/64.png" alt="channel-logo">
                 <p class="text-white font-semibold">${data.name}</p>
             </div>
@@ -42,6 +42,8 @@ export async function loadListCountry() {
 
         }
     })
+
+    loadDefaultChannelSteram();
 
     const input_country_search = document.getElementById("input-search-country");
     if (!input_country_search) return false;
