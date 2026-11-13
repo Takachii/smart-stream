@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Stream Platform</title>
+
+    <link rel="shortcut icon" href="assets/images/preview.png" type="image/x-icon">
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -13,20 +15,27 @@
 
     <main>
 
-        <aside id="aside-country" class="absolute bg-[#111827]/95 h-dvh w-full xl:w-100 scrollbar-thumb-gray-500">
+        <div id="home-loading" class="absolute flex flex-col gap-4 items-center justify-center inset-0">
+            <div class="h-12 w-12 animate-spin rounded-full border-4 border-gray-200 border-t-gray-600"></div>
+            <p id="text-error" class="text-white font-semibold">Request category and channels ...</p>
+        </div>
 
-            <div class="flex justify-between bg-[#1a2234]">
-                <input id="input-search-country" class="text-slate-100 placeholder-slate-500 p-3 w-full outline-none" type="text" placeholder="Search Country ...">
-                <button id="btn-close-aside" class="text-slate-400 hover:text-sky-400 cursor-pointer text-2xl font-bold leading-none pr-4">&times;</button>
+        <aside id="aside-country" class="hidden absolute h-dvh w-full">
+
+            <div class="bg-[#111827]/95 xl:w-100 h-dvh scrollbar-thumb-gray-500">
+                <div class="flex justify-between bg-[#1a2234]">
+                    <input id="input-search-country" class="text-slate-100 placeholder-slate-500 p-3 w-full outline-none" type="text" placeholder="Search Category by country ...">
+                    <button id="btn-close-aside" class="text-slate-400 hover:text-sky-400 cursor-pointer text-2xl font-bold leading-none pr-4">&times;</button>
+                </div>
+    
+                <ul id="list-country" class="max-h-dvh overflow-y-auto">
+    
+                </ul>
             </div>
-
-            <ul id="list-country" class="max-h-dvh overflow-y-auto">
-
-            </ul>
 
         </aside>
 
-        <section class="p-4 xl:p-8">
+        <section id="main-section" class="blur-md p-4 xl:p-8">
 
             <div class="grid grid-cols-1 gap-3 xl:flex xl:justify-center xl:gap-6">
 
@@ -34,9 +43,9 @@
 
                     <div class="flex gap-2 items-center">
 
-                        <img id="img-aside-country" class="w-13 p-2 bg-[#161d2e] hover:bg-sky-600 rounded-md cursor-pointer" src="assets/icons/list.svg" alt="list-icon">
+                        <img id="img-aside-country" class="w-13 p-2 bg-[#161d2e] hover:bg-sky-800/50 transition-colors rounded-md cursor-pointer" src="assets/icons/list.svg" alt="list-icon">
                         <input id="search-channels" class="bg-[#161d2e] hover:bg-[#1e2940] focus:bg-[#1e2940] placeholder-slate-500 shadow-md shadow-black/40 transition duration-300 hover p-3 text-slate-100 w-full rounded-md" type="text" placeholder="Search Channel ...">
-                    
+
                     </div>
 
                     <ul id="list-channels" class="max-h-dvh xl:max-h-142 overflow-y-auto space-y-2 scrollbar-thumb-gray-500">
@@ -53,7 +62,7 @@
                 </div>
 
                 <div class="flex flex-col gap-3 xl:max-w-200">
-                    
+
                     <video id="channel-preview" class="rounded-md bg-black" controls autoplay muted></video>
 
                     <ul id="list-epg" class="max-h-40 overflow-y-auto space-y-3">
@@ -66,14 +75,14 @@
                         </li>
 
                     </ul>
-                
+
                 </div>
 
             </div>
 
         </section>
     </main>
-    
+
     <script type="module" src="./js/main.js"></script>
 
 </body>
